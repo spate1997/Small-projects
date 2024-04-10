@@ -1,6 +1,6 @@
 require 'json'
 
-class BankAccount
+class BankAccoun
   attr_reader :balance
 
   def initialize(owner_name, initial_balance = 0)
