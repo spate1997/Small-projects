@@ -1,0 +1,22 @@
+class Solution:
+    def isAnagram(self, s, t):
+        # Check if the lengths of the string are equal
+        if len(s) != len(t):
+            return False
+
+        # Create two arrays to store the count of each character
+        freq_s = [0] * 26
+        freq_t = [0] * 26
+
+        # Iterate through each character in string s
+        for char in s:
+            # Increment the count of the corresponding character in freq_s
+            freq_s[ord(char) - ord('a')] += 1
+
+        # Iterate through each character in string t
+        for char in t:
+            # Increment the count of the corresponding character in freq_t
+            freq_t[ord(char) - ord('a')] += 1
+
+        # Compare the frequency arrays
+        return freq_s == freq_t
