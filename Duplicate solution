@@ -1,0 +1,17 @@
+class Solution:
+    def containsDuplicate(self, nums):
+        # Create an empty set to store the elements encountered
+        seen = set()
+        
+        # Iterate through each element in the array
+        for num in nums:
+            # Check if the current element exists in the set
+            if num in seen:
+                # If it does, return True as it's a duplicate
+                return True
+            
+            # If the current element doesn't exist in the set, add it
+            seen.add(num)
+        
+        # If no duplicates are found, return False
+        return False
