@@ -1,0 +1,24 @@
+def is_prime(num):
+    """Check if a number is prime."""
+    if num <= 1:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+def generate_primes(max_num):
+    """Generate a list of prime numbers up to max_num."""
+    primes = []
+    for number in range(2, max_num + 1):
+        if is_prime(number):
+            primes.append(number)
+    return primes
+
+def main():
+    max_number = int(input("Enter the maximum number to check for primes: "))
+    primes = generate_primes(max_number)
+    print("Prime numbers up to", max_number, "are:", primes)
+
+if __name__ == "__main__":
+    main()
