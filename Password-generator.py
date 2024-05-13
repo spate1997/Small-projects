@@ -44,3 +44,12 @@ for char in password_list:
 
 # Output the final password
 print(f"Your password is: {password}")
+
+# Tests
+assert len(password) == nr_letters + nr_symbols + nr_numbers, "Error: Password length is incorrect."
+assert sum(c in letters for c in password) == nr_letters, "Error: Number of letters in the password is incorrect."
+assert sum(c in symbols for c in password) == nr_symbols, "Error: Number of symbols in the password is incorrect."
+assert sum(c in numbers for c in password) == nr_numbers, "Error: Number of numbers in the password is incorrect."
+
+print("All tests passed!")
+
