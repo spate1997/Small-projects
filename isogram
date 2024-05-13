@@ -1,0 +1,3 @@
+def is_isogram(text):
+    # Normalize the text to lower case to ignore letter case
+    text = text.lower()
