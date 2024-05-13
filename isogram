@@ -11,3 +11,5 @@ def is_isogram(text):
             # If the character has already been seen, it's not an isogram
             return False
         seen.add(char)
+    # If no characters repeat, it's an isogram
+    return True
