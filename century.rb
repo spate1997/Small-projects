@@ -1,3 +1,4 @@
+#
 def century(year)
     (year + 99) / 100
   end
