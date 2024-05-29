@@ -8,3 +8,8 @@ def print_board(board):
     print('-----------')
     print(' ' + board[1] + ' | ' + board[2] + ' | ' + board[3])
 
+def player_input(board, marker):
+    position = int(input(f"Player {marker}, choose your position: (1-9) "))
+    while board[position] != ' ':
+        position = int(input("Position already taken, choose another position: (1-9) "))
+    board[position] = marker
