@@ -1,4 +1,4 @@
- require 'json'
+require 'json'
 
 class BankAccount
   attr_reader :balance
