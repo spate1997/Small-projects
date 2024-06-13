@@ -10,3 +10,12 @@ def correct(s):
     corrected_text = ''.join(replacements.get(char, char) for char in s)
     
     return corrected_text
+
+#remove exclamation marks
+
+def remove_exclamation_marks(s):
+    return s.replace('!', '')
+
+# Example usage
+example_string = "Hello, World!!!"
+print(remove_exclamation_marks(example_string))  # Output: "Hello, World"
