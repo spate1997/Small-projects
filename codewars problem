@@ -1,0 +1,12 @@
+def correct(s):
+    # Define the replacement rules
+    replacements = {
+        '5': 'S',
+        '0': 'O',
+        '1': 'I'
+    }
+    
+    # Correct the text using the replacement rules
+    corrected_text = ''.join(replacements.get(char, char) for char in s)
+    
+    return corrected_text
