@@ -1,0 +1,11 @@
+def square_digits(num):
+    num_str = str(num)
+    result = ""
+    for digit in num_str:
+        squared_digit = int(digit) ** 2
+        result += str(squared_digit)
+    return int(result)
+
+# Test cases
+print(square_digits(9119))  # Output: 811181
+print(square_digits(765))   # Output: 493625
