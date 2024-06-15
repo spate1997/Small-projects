@@ -1,0 +1,20 @@
+from datetime import datetime
+
+# Create accounts
+savings = SavingsAccount("001", "Alice", 1000.0, 0.05)
+checking = CheckingAccount("002", "Bob", 500.0, 200.0)
+
+# Perform transactions
+savings.deposit(200)
+checking.withdraw(100)
+
+# Apply interest to savings account
+savings.apply_interest()
+
+# Print account details
+print(savings)
+print(checking)
+
+# Record a transaction
+transaction = Transaction("T001", savings, 200, "deposit", datetime.now())
+print(transaction)
