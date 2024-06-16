@@ -63,6 +63,12 @@ class Library:
             self.books.append(book)
             return True
         return False
+    def search_books_by_title(self, title):
+        return [book for book in self.books if title.lower() in book.title.lower()]
+
+    def search_books_by_author(self, author):
+        return [book for book in self.books if author.lower() in book.author.lower()]
+
 # Example usage
 if __name__ == "__main__":
     # Create books
