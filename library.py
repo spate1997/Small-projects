@@ -35,4 +35,31 @@ class Member:
             self.borrowed_books.remove(book)
             return True
         return False
-#to do add Library class
+
+class Library:
+    def __init__(self, name):
+        self.name = name
+        self.books = []
+        self.members = []
+
+    def add_book(self, book):
+        self.books.append(book)
+
+    def remove_book(self, book):
+        if book in self.books:
+            self.books.remove(book)
+
+    def register_member(self, member):
+        self.members.append(member)
+
+    def borrow_book(self, book, member):
+        if member.borrow_book(book):
+            self.books.remove(book)
+            return True
+        return False
+
+    def return_book(self, book, member):
+        if member.return_book(book):
+            self.books.append(book)
+            return True
+        return False
