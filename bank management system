@@ -35,3 +35,49 @@ class SavingsAccount(Account):
         interest = self.balance * self.interest_rate
         self.balance += interest
         print(f"Interest applied: ${interest}. New balance: ${self.balance}")
+
+class CheckingAccount(Account):
+    def __init__(self, account_number, account_holder, balance, overdraft_limit):
+        super().__init__(account_number, account_holder, balance)
+        self.overdraft_limit = overdraft_limit
+
+    def withdraw(self, amount):
+        if amount > 0 and amount <= (self.balance + self.overdraft_limit):
+            self.balance -= amount
+            print(f"Withdrew ${amount}. New balance: ${self.balance}")
+        else:
+            print("Withdrawal amount must be positive and not exceed the overdraft limit.")
+
+class Transaction:
+    def __init__(self, transaction_id, account, amount, transaction_type, timestamp):
+        self.transaction_id = transaction_id
+        self.account = account
+        self.amount = amount
+        self.transaction_type = transaction_type
+        self.timestamp = timestamp
+
+    def __str__(self):
+        return (f"Transaction[{self.transaction_id}] - {self.transaction_type.capitalize()}: "
+                f"${self.amount} on {self.timestamp} for {self.account.account_holder}")
+
+# Example Usage
+if __name__ == "__main__":
+    # Create accounts
+    savings = SavingsAccount("001", "Alice", 1000.0, 0.05)
+    checking = CheckingAccount("002", "Bob", 500.0, 200.0)
+
+    # Perform transactions
+    savings.deposit(200)
+    checking.withdraw(100)
+
+    # Apply interest to savings account
+    savings.apply_interest()
+
+    # Print account details
+    print(savings)
+    print(checking)
+
+    # Record a transaction
+    transaction = Transaction("T001", savings, 200, "deposit", datetime.now())
+    print(transaction)
+
