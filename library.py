@@ -63,3 +63,37 @@ class Library:
             self.books.append(book)
             return True
         return False
+# Example usage
+if __name__ == "__main__":
+    # Create books
+    book1 = Book("The Great Gatsby", "F. Scott Fitzgerald", "1234567890")
+    book2 = Book("To Kill a Mockingbird", "Harper Lee", "0987654321")
+    book3 = Book("1984", "George Orwell", "1122334455")
+
+    # Create members
+    member1 = Member("Alice", 1)
+    member2 = Member("Bob", 2)
+
+    # Create a library
+    library = Library("City Library")
+
+    # Add books to the library
+    library.add_book(book1)
+    library.add_book(book2)
+    library.add_book(book3)
+
+    # Register members
+    library.register_member(member1)
+    library.register_member(member2)
+
+    # Borrow and return books
+    print("Borrowing Book 1 for Alice:", library.borrow_book(book1, member1))  # Should return True
+    print("Borrowing Book 1 for Bob:", library.borrow_book(book1, member2))    # Should return False (already borrowed by Alice)
+    print("Returning Book 1 for Alice:", library.return_book(book1, member1))  # Should return True
+    print("Borrowing Book 1 for Bob again:", library.borrow_book(book1, member2))  # Should return True
+    print("Borrowing Book 2 for Alice:", library.borrow_book(book2, member1))  # Should return True
+    print("Borrowing Book 3 for Alice:", library.borrow_book(book3, member1))  # Should return True
+    print("Returning Book 2 for Alice:", library.return_book(book2, member1))  # Should return True
+    print("Returning Book 3 for Alice:", library.return_book(book3, member1))  # Should return True
+    print("Returning Book 1 for Bob:", library.return_book(book1, member2))  # Should return True
+
