@@ -1,24 +1,44 @@
 def is_prime(num):
-    """Check if a number is prime."""
-    if num <= 1:
+    """Check if a number is prime.
+
+    A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself.
+
+    Args:
+    num (int): The number to check for primality.
+
+    Returns:
+    bool: True if num is a prime number, False otherwise.
+    """
+    if num <= 1:  # Prime numbers are greater than 1
         return False
+    # Check for factors from 2 to the square root of num
     for i in range(2, int(num**0.5) + 1):
-        if num % i == 0:
+        if num % i == 0:  # If num is divisible by any number other than 1 and itself
             return False
-    return True
+    return True  # num is prime if no divisors were found
 
 def generate_primes(max_num):
-    """Generate a list of prime numbers up to max_num."""
-    primes = []
-    for number in range(2, max_num + 1):
-        if is_prime(number):
-            primes.append(number)
+    """Generate a list of prime numbers up to max_num.
+
+    This function iterates through all numbers from 2 up to max_num and collects primes.
+
+    Args:
+    max_num (int): The upper limit of numbers to check for primality.
+
+    Returns:
+    list: A list of prime numbers up to max_num.
+    """
+    primes = []  # List to store prime numbers
+    for number in range(2, max_num + 1):  # Iterate over each number up to max_num
+        if is_prime(number):  # Check if the number is prime
+            primes.append(number)  # Add the prime number to the list
     return primes
 
 def main():
-    max_number = int(input("Enter the maximum number to check for primes: "))
-    primes = generate_primes(max_number)
-    print("Prime numbers up to", max_number, "are:", primes)
+    """Main function to handle user input and output."""
+    max_number = int(input("Enter the maximum number to check for primes: "))  # Get user input
+    primes = generate_primes(max_number)  # Generate primes up to the entered number
+    print("Prime numbers up to", max_number, "are:", primes)  # Output the list of primes
 
 if __name__ == "__main__":
-    main()
+    main()  # Execute the main function if the file is run as a script
