@@ -1,4 +1,4 @@
- class Solution:
+class Solution:
     def containsDuplicate(self, nums):
         # Create an empty set to store the elements encountered
         seen = set()
