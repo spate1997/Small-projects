@@ -23,3 +23,4 @@ decoded = caesar_cipher_decode(encoded, 2)  # Decodes the result back to "HI"
 print(f"Encoded: {encoded}")  # Output: JK
 print(f"Decoded: {decoded}")  # Output: HI
 
+
