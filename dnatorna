@@ -1,0 +1,7 @@
+def dna_to_rna(dna):
+    return dna.replace('T', 'U')
+
+# Example usage:
+dna_sequence = "GCAT"
+rna_sequence = dna_to_rna(dna_sequence)
+print(rna_sequence)  # Output: GCAU
