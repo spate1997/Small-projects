@@ -1,4 +1,4 @@
-#
+#for pdfs
 import PyPDF2
 import os
 
