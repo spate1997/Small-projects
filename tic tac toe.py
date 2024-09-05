@@ -64,7 +64,7 @@ def play_game():
     if input("Do you want to play again? (yes/no): ").lower().startswith('y'):
         play_game()
 
-# Start the game
+# Start the game 
 play_game()
 
 
