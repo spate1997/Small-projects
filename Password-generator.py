@@ -1,4 +1,3 @@
-
 import random
 
 # Lists of possible characters for the password
